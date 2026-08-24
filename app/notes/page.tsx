@@ -1,7 +1,15 @@
-// app/notes/page.tsx
+import { QueryClient } from "@tanstack/react-query";
+import { fetchNotes } from "@/lib/api/api";
 
-const Notes = () => {
-  return <div>Notes</div>;
-};
-
-export default Notes;
+export default async function Notes() {
+  const queryClient = new QueryClient();
+  await queryClient.prefetchQuery({
+    queryKey: ["notes"],
+    queryFn: () => fetchNotes(""),
+  });
+  return (
+    <>
+      <div>Notes</div>
+    </>
+  );
+}

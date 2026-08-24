@@ -4,6 +4,7 @@ import "./globals.css";
 
 import Header from "@/components/Headre/Header";
 import Footer from "@/components/Footer/Footer";
+import TanstackProvider from "@/components/TanStackProvider/TanStackProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,9 +25,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
       <body>
-        <Header />
-        <main>{children}</main>
-        <Footer />
+        <TanstackProvider>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+        </TanstackProvider>
       </body>
     </html>
   );
