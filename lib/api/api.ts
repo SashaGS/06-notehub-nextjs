@@ -13,7 +13,7 @@ interface NotesResponse {
 }
 
 export const fetchNotes = async (
-  search: string,
+  search?: string,
   currentPage?: number,
 ): Promise<NotesResponse> => {
   const config = {
