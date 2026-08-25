@@ -16,7 +16,7 @@ function NoteForm({ onClose }: NoteFormProps) {
   const { mutate } = useMutation({
     mutationFn: addNote,
     onSuccess() {
-      queryClient.invalidateQueries({ queryKey: ["notes"] });
+      queryClient.invalidateQueries({ queryKey: ["note"] });
       onClose();
     },
     onError(error) {

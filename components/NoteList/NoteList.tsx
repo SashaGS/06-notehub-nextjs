@@ -16,7 +16,7 @@ function NoteList({ notes }: NoteListProps) {
   const { mutate: mutateDelete } = useMutation({
     mutationFn: deleteNote,
     onSuccess() {
-      queryClient.invalidateQueries({ queryKey: ["notes"] });
+      queryClient.invalidateQueries({ queryKey: ["note"] });
     },
     onError(error) {
       toast(`Error deleting note ${error}`);

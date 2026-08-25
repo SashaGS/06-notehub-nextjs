@@ -26,7 +26,7 @@ export default function NotesClient() {
     isError,
     isSuccess,
   } = useQuery({
-    queryKey: ["notes", search, currentPage],
+    queryKey: ["note", search, currentPage],
     queryFn: () => fetchNotes(search, currentPage),
     retry: 1,
     staleTime: 5000,
