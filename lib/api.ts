@@ -31,7 +31,7 @@ export const fetchNotes = async (
   return resp.data;
 };
 
-export const fetchNoteById = async (id: Pick<Note, "id">): Promise<Note> => {
+export const fetchNoteById = async (id: Note["id"]): Promise<Note> => {
   const config = {
     headers: {
       accept: "application/json",
@@ -55,7 +55,7 @@ export const addNote = async (
   return data;
 };
 
-export const deleteNote = async (id: Pick<Note, "id">): Promise<Note> => {
+export const deleteNote = async (id: Note["id"]): Promise<Note> => {
   const { data } = await axios.delete<Note>(`/notes/${id}`, {
     headers: { Authorization: `Bearer ${token}` },
   });
