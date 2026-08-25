@@ -31,6 +31,20 @@ export const fetchNotes = async (
   return resp.data;
 };
 
+export const fetchNoteById = async (id: NoteId): Promise<Note> => {
+  const config = {
+    headers: {
+      accept: "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+    params: {
+      id: id,
+    },
+  };
+  const { data } = await axios.get(`/notes/${id}`, config);
+  return data;
+};
+
 export const addNote = async (
   noteData: Pick<Note, "title" | "content" | "tag">,
 ): Promise<Note> => {

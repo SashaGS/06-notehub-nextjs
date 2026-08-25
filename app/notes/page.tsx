@@ -14,7 +14,6 @@ export default async function Notes() {
   });
   return (
     <>
-      <div>Notes</div>
       <HydrationBoundary state={dehydrate(queryClient)}>
         <NotesClient />
       </HydrationBoundary>

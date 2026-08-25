@@ -1,6 +1,6 @@
 "use client";
 
-import css from "./App.module.css";
+import css from "./Notes.module.css";
 import { useEffect, useState } from "react";
 import { useQuery, keepPreviousData } from "@tanstack/react-query";
 import toast, { Toaster } from "react-hot-toast";
@@ -33,7 +33,7 @@ export default function NotesClient() {
     placeholderData: keepPreviousData,
     refetchOnMount: false,
   });
-  console.log(notes?.totalPages);
+  //   console.log(notes?.totalPages);
   const handleClick = () => {
     setisOpenModal(!isOpenModal);
   };
