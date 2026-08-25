@@ -22,6 +22,14 @@ const NoteDetailsClients = () => {
     ? `Updated at: ${note?.updatedAt}`
     : `Created at: ${note?.createdAt}`;
 
+  if (isLoading) {
+    return <p>Loading, please wait...</p>;
+  }
+
+  if (isError || !note) {
+    return <p>Something went wrong.</p>;
+  }
+
   return (
     <main className={css.main}>
       <div className={css.container}>
