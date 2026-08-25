@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Note, NoteId } from "@/types/note";
+import { Note } from "@/types/note";
 
 // Token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IkZxdmFAdWtyLm5ldCIsImlhdCI6MTc4NjYyMjc0Mn0.jkg9S2Kty2N0FrvCg1GBSW9zCjuWvjxmxCLSEkC-ik8";
 
@@ -31,7 +31,7 @@ export const fetchNotes = async (
   return resp.data;
 };
 
-export const fetchNoteById = async (id: NoteId): Promise<Note> => {
+export const fetchNoteById = async (id: Pick<Note, "id">): Promise<Note> => {
   const config = {
     headers: {
       accept: "application/json",
@@ -58,7 +58,7 @@ export const addNote = async (
   return data;
 };
 
-export const deleteNote = async (id: NoteId): Promise<Note> => {
+export const deleteNote = async (id: Pick<Note, "id">): Promise<Note> => {
   const { data } = await axios.delete<Note>(`/notes/${id}`, {
     headers: { Authorization: `Bearer ${token}` },
   });
