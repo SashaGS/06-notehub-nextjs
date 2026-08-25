@@ -37,9 +37,6 @@ export const fetchNoteById = async (id: NoteId): Promise<Note> => {
       accept: "application/json",
       Authorization: `Bearer ${token}`,
     },
-    params: {
-      id: id,
-    },
   };
   const { data } = await axios.get(`/notes/${id}`, config);
   return data;
