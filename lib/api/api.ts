@@ -1,5 +1,5 @@
 import axios from "axios";
-import type { Note, NoteId } from "../../types/note";
+import type { Note, NoteId } from "@/types/note";
 
 // Token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IkZxdmFAdWtyLm5ldCIsImlhdCI6MTc4NjYyMjc0Mn0.jkg9S2Kty2N0FrvCg1GBSW9zCjuWvjxmxCLSEkC-ik8";
 
