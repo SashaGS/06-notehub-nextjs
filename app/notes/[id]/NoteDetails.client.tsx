@@ -18,9 +18,9 @@ const NoteDetailsClients = () => {
     refetchOnMount: false,
   });
 
-  const formattedDate = note?.updatedAt
-    ? `Updated at: ${note?.updatedAt}`
-    : `Created at: ${note?.createdAt}`;
+  //   const formattedDate = note?.updatedAt
+  //     ? `Updated at: ${note?.updatedAt}`
+  //     : `Created at: ${note?.createdAt}`;
 
   if (isLoading) {
     return <p>Loading, please wait...</p>;
@@ -39,7 +39,7 @@ const NoteDetailsClients = () => {
           </div>
           <p className={css.tag}>{note?.tag}</p>
           <p className={css.content}>{note?.content}</p>
-          <p className={css.date}>{formattedDate}</p>
+          <p className={css.date}>{note?.createdAt}</p>
         </div>
       </div>
     </main>
